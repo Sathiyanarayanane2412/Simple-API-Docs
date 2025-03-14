@@ -1,0 +1,38 @@
+### **2. swagger.yaml (Swagger Documentation)**
+This file will provide interactive API documentation.
+
+**`swagger.yaml`**  
+```yaml
+openapi: 3.0.0
+info:
+  title: Simple Task API
+  description: API to manage tasks
+  version: 1.0.0
+
+paths:
+  /api/tasks:
+    get:
+      summary: Get all tasks
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - id: 1
+                  title: "Sample Task"
+                  status: "Pending"
+
+    post:
+      summary: Create a new task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+      responses:
+        201:
+          description: Task created successfully
